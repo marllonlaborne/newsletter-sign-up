@@ -123,8 +123,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 400px;
-  padding: 60px 50px;
+  width: 500px;
+  padding: 60px 70px;
   border-radius: 30px;
   gap: 32px;
   background-color: var(--white);
