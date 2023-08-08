@@ -12,7 +12,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 fieldset {
@@ -41,17 +41,27 @@ body {
   border-radius: 40px;
 }
 
+.newsletter-container aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .newsletter-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px;
-  width: 370px;
+  width: 500px;
 }
 
 .newsletter-form h2 {
   margin: 25px 0;
   font-size: 3.5rem;
+}
+
+.newsletter-form p {
+  line-height: 1.5;
 }
 
 .newsletter-updates-list {
@@ -113,8 +123,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 400px;
-  padding: 60px 50px;
+  width: 500px;
+  padding: 60px 70px;
   border-radius: 30px;
   gap: 32px;
   background-color: var(--white);
