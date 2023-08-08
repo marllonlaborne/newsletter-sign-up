@@ -30,4 +30,20 @@
   .form {
     margin-top: 15px;
   }
+  .success-subscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 375px;
+    height: 100vh;
+    padding: 30px 20px;
+    border-radius: 0px;
+  }
+  .success-subscription button,
+  .success-subscription img {
+    margin-top: auto;
+  }
+  .success-subscription img {
+    align-self: flex-start;
+  }
 }
