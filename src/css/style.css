@@ -156,3 +156,26 @@ body {
   box-shadow: 0px 3px 15px 5px var(--box-shadow-color);
   transition: all .3s ease .1s;
 }
+
+.label-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  color: var(--tomato);
+}
+
+.error-input,
+.error-input:focus {
+  outline: 1px solid var(--tomato);
+}
+
+#email.error-input::placeholder {
+  color: var(--tomato);
+}
+
+.error-input {
+  background-color: hsl(5, 100%, 95%);
+  color: var(--tomato);
+}
