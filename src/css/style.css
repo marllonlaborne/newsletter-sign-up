@@ -41,6 +41,12 @@ body {
   border-radius: 40px;
 }
 
+.newsletter-container aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .newsletter-form {
   display: flex;
   flex-direction: column;
