@@ -1,0 +1,33 @@
+@media (max-width: 375px) {
+  .newsletter-container {
+    display: none;
+    border-radius: 0px;
+    width: 100%;
+    padding: 5px;
+    justify-content: center;
+  }
+  .newsletter-container aside {
+    grid-area: 1;
+  }
+  .newsletter-container aside > img {
+    width: 375px;
+  }
+  .newsletter-form {
+    padding: 20px;
+    width: 375px;
+  }
+  .newsletter-form h2 {
+    margin: 20px 0;
+    font-size: 2.5rem;
+  }
+  .newsletter-updates-list {
+    margin: 25px 0;
+    font-size: .875rem;
+  }
+  .newsletter-updates-list li:last-child {
+    row-gap: 50px;
+  }
+  .form {
+    margin-top: 15px;
+  }
+}
