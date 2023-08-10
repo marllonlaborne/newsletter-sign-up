@@ -29,14 +29,12 @@ const subHandleClick = (event) => {
     emailInput.classList.remove('error-input')
     previousElement.classList.remove('error-message')
     previousElement.textContent = ''
-    setInterval(() => {
-      newsletter.style.display = 'none'
-      postSubscription.style.display = 'flex'
-      postSubParagraph.textContent = `
-        A confirmation email has been sent to ${userEmail}. 
-        Please open it and click the button inside to confirm your subscription.
-      `
-    }, 1000)
+    newsletter.style.display = 'none'
+    postSubscription.style.display = 'flex'
+    postSubParagraph.textContent = `
+      A confirmation email has been sent to ${userEmail}. 
+      Please open it and click the button inside to confirm your subscription.
+    `
   }
 }
 
