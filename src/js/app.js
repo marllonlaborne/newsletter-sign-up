@@ -1,21 +1,25 @@
 const form = document.getElementById('form')
 const emailInput = document.getElementById('email')
-const emailError = document.querySelector('.error-input')
-const labelError = document.querySelector('.error-message')
 const newsletter = document.querySelector('.newsletter-container')
-const subscribeButton = document.querySelector('#form button')
+const subscribe = document.querySelector('#form button')
 const postSubscription = document.querySelector('.success-subscription')
+const dismissMsg = postSubscription.querySelector('button')
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => event.preventDefault())
+
+const subHandleClick = (event) => {
   event.preventDefault()
-  
-  subHandleClick(event)
-})
 
-const getUserEmail = (event) => {
-  const userEmail = event.target.value
+  // Get the user's email from email input field
+  const userEmail = emailInput.value
+
+  // Check if the user's email is invalid or not
   const isEmailInvalid = userEmail === '' || !checkEmail(userEmail)
+
+  // Get the previous element `span` from `emailInput`
   const previousElement = emailInput.previousElementSibling.lastElementChild
+
+  // Get the paragraph element from the `postSubscripton` div
   const postSubParagraph = postSubscription.querySelector('p')
   
   if (isEmailInvalid) {
@@ -23,25 +27,29 @@ const getUserEmail = (event) => {
     previousElement.classList.add('error-message')
     previousElement.textContent = 'Valid email required'
   } else {
-    setInterval(() => {
-      newsletter.style.display = 'none'
-      postSubscription.style.display = 'flex'
-      postSubParagraph.textContent = `
-        A confirmation email has been sent to ${userEmail}. Please open it and click the button inside to confirm your subscription.
-      `
-    }, 1000)
+    emailInput.classList.remove('error-input')
+    previousElement.classList.remove('error-message')
+    previousElement.textContent = ''
+    newsletter.style.display = 'none'
+    postSubscription.style.display = 'flex'
+    postSubParagraph.textContent = `
+      A confirmation email has been sent to ${userEmail}. 
+      Please open it and click the button inside to confirm your subscription.
+    `
   }
 }
 
-const subHandleClick = (event) => {
-  event.preventDefault()
-
-  getUserEmail(event)
+// Function that redirects the user to the newsletter layout
+const dismissHandleClick = () => {
+  newsletter.style.display = 'flex'
+  postSubscription.style.display = 'none'
+  emailInput.value = ''
 }
 
+// Function responsible for validating the user's email
 const checkEmail = (email) => {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
 }
 
-emailInput.addEventListener('input', getUserEmail)
-subscribeButton.addEventListener('click', subHandleClick)
+subscribe.addEventListener('click', subHandleClick)
+dismissMsg.addEventListener('click', dismissHandleClick)
