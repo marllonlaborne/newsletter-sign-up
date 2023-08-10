@@ -1,7 +1,5 @@
 const form = document.getElementById('form')
 const emailInput = document.getElementById('email')
-const emailError = document.querySelector('.error-input')
-const labelError = document.querySelector('.error-message')
 const newsletter = document.querySelector('.newsletter-container')
 const subscribeButton = document.querySelector('#form button')
 const postSubscription = document.querySelector('.success-subscription')
