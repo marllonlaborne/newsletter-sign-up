@@ -3,6 +3,7 @@ const emailInput = document.getElementById('email')
 const newsletter = document.querySelector('.newsletter-container')
 const subscribe = document.querySelector('#form button')
 const postSubscription = document.querySelector('.success-subscription')
+const dismissMsg = postSubscription.querySelector('button')
 
 form.addEventListener('submit', (event) => event.preventDefault())
 
@@ -38,9 +39,17 @@ const subHandleClick = (event) => {
   }
 }
 
+// Function that redirects the user to the newsletter layout
+const dismissHandleClick = () => {
+  newsletter.style.display = 'flex'
+  postSubscription.style.display = 'none'
+  emailInput.value = ''
+}
+
 // Function responsible for validating the user's email
 const checkEmail = (email) => {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
 }
 
 subscribe.addEventListener('click', subHandleClick)
+dismissMsg.addEventListener('click', dismissHandleClick)
