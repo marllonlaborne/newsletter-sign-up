@@ -163,6 +163,13 @@ body {
 }
 
 .error-message {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--tomato);
+}
+
+.error-input {
+  background-color: hsl(5, 100%, 95%);
   color: var(--tomato);
 }
 
