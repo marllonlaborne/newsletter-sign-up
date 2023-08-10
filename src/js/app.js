@@ -1,7 +1,7 @@
 const form = document.getElementById('form')
 const emailInput = document.getElementById('email')
 const newsletter = document.querySelector('.newsletter-container')
-const subscribeButton = document.querySelector('#form button')
+const subscribe = document.querySelector('#form button')
 const postSubscription = document.querySelector('.success-subscription')
 
 form.addEventListener('submit', (event) => {
@@ -41,5 +41,4 @@ const checkEmail = (email) => {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)
 }
 
-emailInput.addEventListener('input', getUserEmail)
-subscribeButton.addEventListener('click', subHandleClick)
+subscribe.addEventListener('click', subHandleClick)
