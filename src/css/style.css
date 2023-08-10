@@ -181,8 +181,3 @@ body {
 #email.error-input::placeholder {
   color: var(--tomato);
 }
-
-.error-input {
-  background-color: hsl(5, 100%, 95%);
-  color: var(--tomato);
-}
